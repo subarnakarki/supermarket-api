@@ -7,11 +7,10 @@ const validateInput = [
     check('price').isNumeric()
 ];
 
-const checkProduce = (newProduceData) => {
-    if (newProduceData) {
-        const {name, code } = newProduceData;
+const checkProduce = (name) => {
+    if (name) {
         for (let i = 0; i < produceData.length; i++) {
-            if (produceData[i].name.toLowerCase() === name.toLowerCase() || produceData[i].code.toLowerCase() === code.toLowerCase()) {
+            if (produceData[i].name.toLowerCase() === name.toLowerCase()) {
                 return produceData[i];
             }
         }

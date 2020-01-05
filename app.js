@@ -24,11 +24,9 @@ app.get('/produce', (req, res, next) => {
     const queryName = req.query.name,
           queryUpperCase = req.query.upperCase,
           foundProduce = queryName ? checkProduce(queryName) : false;
-          debugger;
     if (queryName && foundProduce) {
         return res.send(queryUpperCase === 'true' ? foundProduce.name.toUpperCase() : foundProduce.name);
     } else {
-        debugger;
         const produceNames = [];
         produceData.forEach(produce => {
             const {name} = produce
@@ -49,9 +47,8 @@ app.post('/produce', validateInput, (req, res, next) => {
         name: req.body.name,
         code: req.body.code,
         price: req.body.price,
-
     };
-    checkProduce(newProduceData) ? console.log('"Produce" or "Code" already exists') : produceData.push(newProduceData);
+    checkProduce(newProduceData.name) ? console.log('"Produce" or "Code" already exists') : produceData.push(newProduceData);
     return res.redirect('/produce');
 
 });
