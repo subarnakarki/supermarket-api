@@ -14,27 +14,14 @@
         "ecmaVersion": 2018
     },
     "rules": {
-        "indent": [
-            "error",
-            2
-        ],
-        "linebreak-style": [
-            "off"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
-        "no-unused-vars": [
-            "error",
-            { "args": "none" }
-        ],
+        "indent": ["error",2],
+        "linebreak-style": ["off"],
+        "quotes": ["error","single"],
+        "semi": ["error","always"],
+        "no-unused-vars": [ "error", { "args": "none" }],
         "no-console": ["warn", { "allow": ["warn"] }],
         "no-unused-expressions":  ["error", { "allowTernary": true }],
-        "consistent-return":"off"
+        "consistent-return":"off",
+        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
     }
 }
